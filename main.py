@@ -17,8 +17,6 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
-import pandas as pd
-import wikipedia
 
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
@@ -64,15 +62,6 @@ def html():
     <p><b>Continuous Delivery</b></p>
     """
 
-@app.route('/pandas')
-def pandas_sugar():
-    df = pd.read_csv("https://raw.githubusercontent.com/noahgift/sugar/master/data/education_sugar_cdc_2003.csv")
-    return jsonify(df.to_dict())
-
-@app.route('/wikipedia/<company>')
-def wikipedia_route(company):
-    result = wikipedia.summary(company, sentences=10)
-    return result
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
