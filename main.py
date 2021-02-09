@@ -2,16 +2,12 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 
-
-# If `entrypoint` is not defined in app.yaml, App Engine will look for an app
-# called `app` in `main.py`.
 app = Flask(__name__)
-
 
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello I like to make AI Apps right alright alrighty almight almight'
+    return 'Hello I like to mfefjwbwake AI Apps, this is update, right alright alrighty almight almight'
 
 @app.route('/name/<value>')
 def name(value):
